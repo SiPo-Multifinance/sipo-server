@@ -21,6 +21,49 @@ class OJTDataController {
             next(err);
         }
     }
+
+    static async create(req, res, next) {
+        try {
+          const { title, user_id } = req.body;
+          const odpGroup = await OJTData.create({ title, user_id});
+          res.status(201).json(odpGroup);
+        } catch (err) {
+          next(err);
+        }
+      }
+    
+      static async update(req, res, next) {
+        try {
+          const { id } = req.params;
+          const { title} = req.body;
+    
+          const odpGroup = await OJTData.findByPk(id);
+          if (!odpGroup) {
+            return res.status(404).json({ message: 'Data detail not found' });
+          }
+    
+          await odpGroup.update({ title });
+    
+          res.status(200).json(odpGroup);
+        } catch (err) {
+          next(err);
+        }
+      }
+    
+      static async delete(req, res, next) {
+        try {
+          const { id } = req.params;
+          const odpGroup = await OJTData.findByPk(id);
+          if (!odpGroup) {
+            return res.status(404).json({ message: 'Detail not found' });
+          }
+    
+          await odpGroup.destroy();
+          res.status(204).send();
+        } catch (err) {
+          next(err);
+        }
+      }
 }
 
 module.exports = OJTDataController;

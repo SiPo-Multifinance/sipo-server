@@ -5,8 +5,8 @@ const DataDetailsController = require('../controllers/data_details');
 
 router.get('/', DataDetailsController.getAll);
 router.get('/:id', DataDetailsController.getOne);
-// router.post('/', auth, ODPGroupController.create);
-// router.put('/:id', auth, ODPGroupController.update);
-// router.delete('/:id', auth, ODPGroupController.delete);
+router.post('/', DataDetailsController.create);
+router.put('/:id', DataDetailsController.update);
+router.delete('/:id', DataDetailsController.delete);
 
 module.exports = router;
