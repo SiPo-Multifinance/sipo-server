@@ -11,6 +11,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      OJTData.belongsTo(models.User, {foreignKey: 'user_id'})
+      OJTData.hasMany(models.DataDetail, {foreignKey: 'ojt_data_id'})
     }
   }
   OJTData.init({

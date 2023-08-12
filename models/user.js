@@ -11,6 +11,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      User.belongsToMany(models.ODPGroup, {through: models.UserODPGroup, foreignKey: 'user_id'})
+      User.hasMany(models.OJTData, {foreignKey: 'user_id'})
     }
   }
   User.init({

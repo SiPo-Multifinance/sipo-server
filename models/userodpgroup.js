@@ -11,6 +11,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      UserODPGroup.belongsTo(models.User, {foreignKey: 'user_id'})
+      UserODPGroup.belongsTo(models.ODPGroup, {foreignKey: 'odp_group_id'})
     }
   }
   UserODPGroup.init({

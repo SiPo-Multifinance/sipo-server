@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      DataDetail.belongsTo(models.OJTData, {foreignKey: 'ojt_data_id'})
     }
   }
   DataDetail.init({
