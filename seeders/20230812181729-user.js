@@ -1,5 +1,5 @@
 'use strict';
-
+const bcrypt = require('bcrypt');
 const { query } = require('express');
 
 /** @type {import('sequelize-cli').Migration} */
@@ -14,11 +14,14 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
+    const hashedAdminPassword = await bcrypt.hash('admin', 10);
+    const hashedStudentPassword = await bcrypt.hash('student', 10);
+    const hashedManagerPassword = await bcrypt.hash('manager', 10);
     await queryInterface.bulkInsert('Users', [{
       is_admin: true,
       is_student: false,
       username: 'admin',
-      password: 'admin',
+      password: hashedAdminPassword,
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -26,7 +29,7 @@ module.exports = {
       is_admin: false,
       is_student: true,
       username: 'student',
-      password: 'student',
+      password: hashedStudentPassword,
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -34,7 +37,7 @@ module.exports = {
       is_admin: false,
       is_student: true,
       username: 'student2',
-      password: 'student2',
+      password: hashedStudentPassword,
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -42,7 +45,7 @@ module.exports = {
       is_admin: false,
       is_student: true,
       username: 'student3',
-      password: 'student3',
+      password: hashedStudentPassword,
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -50,7 +53,7 @@ module.exports = {
       is_admin: false,
       is_student: true,
       username: 'student4',
-      password: 'student4',
+      password: hashedStudentPassword,
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -58,7 +61,7 @@ module.exports = {
       is_admin: false,
       is_student: true,
       username: 'student5',
-      password: 'student5',
+      password: hashedStudentPassword,
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -66,7 +69,7 @@ module.exports = {
       is_admin: false,
       is_student: true,
       username: 'student6',
-      password: 'student6',
+      password: hashedStudentPassword,
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -74,7 +77,7 @@ module.exports = {
       is_admin: false,
       is_student: false,
       username: 'manager',
-      password: 'manager',
+      password: hashedManagerPassword,
       createdAt: new Date(),
       updatedAt: new Date()
     }
