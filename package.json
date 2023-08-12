@@ -13,6 +13,6 @@
     "sqlite3": "^5.1.6"
   },
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "node app.js"
   }
 }
