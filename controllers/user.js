@@ -19,6 +19,8 @@ class UserController {
         {
           id: user.id,
           username: user.username,
+          is_admin: user.is_admin,
+          is_student: user.is_student,
         },
         process.env.JWT_SECRET,
         {
