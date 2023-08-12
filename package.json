@@ -10,8 +10,6 @@
     "sqlite3": "^5.1.6"
   },
   "scripts": {
-    "start": "nodemon app.js",
-    "dev": "nodemon server.js",
-    "install": "npm install"
+    "start": "nodemon app.js"
   }
 }
