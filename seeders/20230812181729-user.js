@@ -48,6 +48,30 @@ module.exports = {
     },
     {
       is_admin: false,
+      is_student: true,
+      username: 'student4',
+      password: 'student4',
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
+    {
+      is_admin: false,
+      is_student: true,
+      username: 'student5',
+      password: 'student5',
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
+    {
+      is_admin: false,
+      is_student: true,
+      username: 'student6',
+      password: 'student6',
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
+    {
+      is_admin: false,
       is_student: false,
       username: 'manager',
       password: 'manager',

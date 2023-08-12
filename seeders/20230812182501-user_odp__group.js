@@ -12,12 +12,15 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
-    await queryInterface.bulkInsert('UserODPGroups', [{
-      user_id: 2,
-      odp_group_id: 1,
-      createdAt: new Date(),
-      updatedAt: new Date()},
-      {user_id: 3,
+    await queryInterface.bulkInsert('UserODPGroups', [
+      {
+        user_id: 2,
+        odp_group_id: 1,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        user_id: 3,
         odp_group_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()},
@@ -25,7 +28,26 @@ module.exports = {
         user_id: 4,
         odp_group_id: 3,
         createdAt: new Date(),
-        updatedAt: new Date()}
+        updatedAt: new Date()
+      },
+      {
+        user_id: 5,
+        odp_group_id: 1,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        user_id: 6,
+        odp_group_id: 1,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        user_id: 7,
+        odp_group_id: 1,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
       ], {});
     },
 
