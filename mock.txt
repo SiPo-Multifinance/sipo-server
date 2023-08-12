@@ -1,0 +1,83 @@
+
+user model
+[
+  {
+    "is_admin": true,
+    "is_student": false,
+    "username": "admin",
+    "password": "adminpassword"
+  },
+  {
+    "is_admin": false,
+    "is_student": true,
+    "username": "student1",
+    "password": "studentpassword"
+  },
+  {
+    "is_admin": false,
+    "is_student": true,
+    "username": "student2",
+    "password": "studentpassword"
+  }
+]
+
+odp_group
+[
+  {
+    "name": "Group A",
+    "batch": 2023
+  },
+  {
+    "name": "Group B",
+    "batch": 2023
+  }
+]
+
+user_odp_group
+[
+  {
+    "user_id": 1,
+    "odp_group_id": 1
+  },
+  {
+    "user_id": 2,
+    "odp_group_id": 1
+  },
+  {
+    "user_id": 3,
+    "odp_group_id": 2
+  }
+]
+
+ojt_data
+[
+  {
+    "user_id": 1,
+    "title": "OJT Data 1 for Admin"
+  },
+  {
+    "user_id": 2,
+    "title": "OJT Data 1 for Student 1"
+  },
+  {
+    "user_id": 3,
+    "title": "OJT Data 1 for Student 2"
+  }
+]
+
+data_detail
+[
+  {
+    "ojt_data_id": 1,
+    "title": "Detail 1",
+    "description": "Description for Detail 1",
+    "date": "2023-08-11T08:00:00Z"
+  },
+  {
+    "ojt_data_id": 1,
+    "title": "Detail 2",
+    "description": "Description for Detail 2",
+    "date": "2023-08-12T08:00:00Z"
+  }
+]
+
