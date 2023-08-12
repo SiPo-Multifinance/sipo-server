@@ -3,7 +3,7 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class DataDetail extends Model {
+  class NanoDetail extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -11,18 +11,17 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      DataDetail.belongsTo(models.OJTData, {foreignKey: 'ojt_data_id'})
-      DataDetail.hasMany(models.NanoDetail, {foreignKey: 'data_details_id'})
+      NanoDetail.belongsTo(models.DataDetail, {foreignKey: 'data_details_id'})
     }
   }
-  DataDetail.init({
-    ojt_data_id: DataTypes.INTEGER,
+  NanoDetail.init({
     title: DataTypes.STRING,
+    date: DataTypes.DATE,
     description: DataTypes.STRING,
-    date: DataTypes.DATE
+    data_details_id: DataTypes.INTEGER
   }, {
     sequelize,
-    modelName: 'DataDetail',
+    modelName: 'NanoDetail',
   });
-  return DataDetail;
+  return NanoDetail;
 };
