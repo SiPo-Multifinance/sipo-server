@@ -29,6 +29,9 @@ class UserController {
         );
         res.status(200).json({ token });
       } catch (err) {
+        if (err.name === 'InvalidCredential') {
+          return res.status(401).json({ message: 'Not Authorized' });
+        }
         next(err);
     }
   }
