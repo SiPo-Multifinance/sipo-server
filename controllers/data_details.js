@@ -12,7 +12,7 @@ class DataDetailsController {
 
     static async getOne(req, res) {
         try {
-            const data_detail = await DataDetail.findOne({ where: { ojt_data_id: req.params.id } })
+            const data_detail = await DataDetail.findAll({ where: { ojt_data_id: req.params.id } })
             if (!data_detail) {
                 return res.status(404).json({ message: 'Data Detail not found' });
             }
