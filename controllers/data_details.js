@@ -1,4 +1,4 @@
-const {DataDetail} = require('../models');
+const {DataDetail, OJTData} = require('../models');
 
 class DataDetailsController {
     static async getAll(req, res) {
@@ -12,7 +12,7 @@ class DataDetailsController {
 
     static async getOne(req, res) {
         try {
-            const data_detail = await DataDetail.findByPk(req.params.id);
+            const data_detail = await DataDetail.findOne({ where: { ojt_data_id: req.params.id } })
             if (!data_detail) {
                 return res.status(404).json({ message: 'Data Detail not found' });
             }

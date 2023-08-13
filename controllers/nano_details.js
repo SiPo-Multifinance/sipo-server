@@ -1,4 +1,4 @@
-const {NanoDetail} = require('../models')
+const {NanoDetail, DataDetail} = require('../models')
 
 class NanoDetailsController {
     static async getAll(req, res) {
@@ -12,7 +12,7 @@ class NanoDetailsController {
 
     static async getOne(req, res) {
         try {
-            const nano_detail = await NanoDetail.findByPk(req.params.id);
+            const nano_detail = await NanoDetail.findOne({ where: { data_details_id: req.params.id } });
             if (!nano_detail) {
                 return res.status(404).json({ message: 'Nano Detail not found' });
             }
