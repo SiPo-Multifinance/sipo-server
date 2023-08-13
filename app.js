@@ -4,7 +4,7 @@ const morgan = require('morgan');
 const cors = require('cors');
 
 const app = express();
-const port = process.env.PORT;
+const port = process.env.MYSQLPORT;
 const router = require('./routes');
 
 app.use(express.json());
