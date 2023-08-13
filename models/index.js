@@ -23,7 +23,7 @@ const sequelize = new Sequelize(
   config.password,
   config
 );
-console.log(config + "INIII NEW SEQUELIZEEEE")
+console.log(config , "INIII NEW SEQUELIZEEEE")
 
 fs.readdirSync(__dirname)
   .filter((file) => {
