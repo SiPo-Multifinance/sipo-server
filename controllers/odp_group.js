@@ -8,12 +8,15 @@ class ODPGroupController {
 
       const whereClause = search ? {
         [Op.or]: [
-          { name: { [Op.iLike]: `%${search}%` } },
-          { batch: { [Op.iLike]: `%${search}%` } }
+          { name: { [Op.like]: `%${search}%` } },
+          { batch: { [Op.like]: `%${search}%` } }
         ]
       } : {};
 
-      const odp_groups = await ODPGroup.findAll({ where: whereClause });
+      const odp_groups = await ODPGroup.findAll({
+        where: whereClause
+      });
+
       res.status(200).json(odp_groups);
     } catch (err) {
       next(err);
