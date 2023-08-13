@@ -16,7 +16,6 @@
     "sqlite3": "^5.1.6"
   },
   "scripts": {
-    "start": "node app.js",
-    "build": "npx sequelize db:migrate npx sequelize db:seed:all"
+    "start": "node app.js"
   }
 }
