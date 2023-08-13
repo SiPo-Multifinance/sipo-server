@@ -1,2 +1,5 @@
 npm i
-sequelize db:create => modify config.json first as needed
+sequelize db:create
+sequelize db:migrate
+sequelize db:seed:all
+nodemon app
