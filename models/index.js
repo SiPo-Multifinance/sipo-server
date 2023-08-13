@@ -13,6 +13,8 @@ const config = {
   host: process.env.MYSQLHOST,
   dialect: "mysql",
 };
+
+console.log(config)
 const db = {};
 
 const sequelize = new Sequelize(
@@ -21,6 +23,7 @@ const sequelize = new Sequelize(
   config.password,
   config
 );
+console.log(config + "INIII NEW SEQUELIZEEEE")
 
 fs.readdirSync(__dirname)
   .filter((file) => {
