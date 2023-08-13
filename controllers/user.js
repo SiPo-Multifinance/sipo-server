@@ -38,7 +38,7 @@ class UserController {
       const users = await User.findAll();
       res.status(200).json(users);
     } catch (err) {
-      console.log('ERROOOOOOOOOOOOR')
+      console.log('ERROOOOOOOOOOOOR', err)
       next(err);
     }
   }
