@@ -1,9 +1,19 @@
 const { ODPGroup, User, UserODPGroup } = require('../models');
+const { Op } = require('sequelize');
 
 class ODPGroupController {
   static async getAll(req, res, next) {
     try {
-      const odp_groups = await ODPGroup.findAll();
+      const {search} = req.query;
+
+      const whereClause = search ? {
+        [Op.or]: [
+          { name: { [Op.iLike]: `%${search}%` } },
+          { batch: { [Op.iLike]: `%${search}%` } }
+        ]
+      } : {};
+
+      const odp_groups = await ODPGroup.findAll({ where: whereClause });
       res.status(200).json(odp_groups);
     } catch (err) {
       next(err);
