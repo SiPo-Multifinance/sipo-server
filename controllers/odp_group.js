@@ -57,6 +57,28 @@ class ODPGroupController {
     }
   }
 
+  static async assignStudents(req, res, next) {
+    try {
+      const { id } = req.params;
+      const { student_ids } = req.body;
+  
+      const odpGroup = await ODPGroup.findByPk(id);
+      if (!odpGroup) {
+        return res.status(404).json({ message: 'ODP Group not found' });
+      }
+  
+      const userODPGroupPromises = student_ids.map(student_id => {
+        return UserODPGroup.create({ user_id: student_id, odp_group_id: id });
+      });
+  
+      const createdUserODPGroups = await Promise.all(userODPGroupPromises);
+  
+      res.status(200).json(createdUserODPGroups);
+    } catch (err) {
+      next(err);
+    }
+  }  
+
   static async update(req, res, next) {
     try {
       const { id } = req.params;
