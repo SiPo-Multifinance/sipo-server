@@ -5,8 +5,8 @@ const ODPGroupController = require('../controllers/odp_group');
 
 router.get('/', ODPGroupController.getAll);
 router.get('/:id', ODPGroupController.getOne);
-router.post('/', AuthorizationMiddleware.authAdmin, ODPGroupController.create);
-router.put('/:id', AuthorizationMiddleware.authAdmin, ODPGroupController.update);
-router.delete('/:id', AuthorizationMiddleware.authAdmin, ODPGroupController.delete);
+router.post('/', ODPGroupController.create);
+router.put('/:id', ODPGroupController.update);
+router.delete('/:id', ODPGroupController.delete);
 
 module.exports = router;

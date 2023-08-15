@@ -5,8 +5,8 @@ const OJTDataController = require('../controllers/ojt_data');
 
 router.get('/', OJTDataController.getAll);
 router.get('/:id', OJTDataController.getOne);
-router.post('/', AuthorizationMiddleware.authAdmin, OJTDataController.create);
-router.put('/:id', AuthorizationMiddleware.authAdmin, OJTDataController.update);
-router.delete('/:id', AuthorizationMiddleware.authAdmin, OJTDataController.delete);
+router.post('/', OJTDataController.create);
+router.put('/:id', OJTDataController.update);
+router.delete('/:id', OJTDataController.delete);
 
 module.exports = router;
