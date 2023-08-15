@@ -12,7 +12,7 @@ class AuthorizationMiddleware {
       try {
         const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
 
-        const roleCheckResults = roleChecks.map(check => check(decodedToken));
+        const roleCheckResults = roleCheck.map(check => check(decodedToken));
 
         if (!roleCheckResults.includes(true)) {
           return res.status(403).json({ message: 'Access forbidden' });
