@@ -27,19 +27,19 @@ class AuthorizationMiddleware {
   }
 
   static authAdmin(req, res, next) {
-    console.log('Checking admin role...');
     return AuthorizationMiddleware.auth(token => {
-      console.log('Admin role check:', token.is_admin);
       return token.is_admin === true;
     })(req, res, next);
   }
 
   static authStudent(req, res, next) {
-    console.log('Checking student role...');
     return AuthorizationMiddleware.auth(token => {
-      console.log('Student role check:', token.is_student);
       return token.is_student === true;
     })(req, res, next);
+  }
+
+  static authAdminOrStudent(req, res, next) {
+    return AuthorizationMiddleware.auth(token => token.is_admin || token.is_student)(req, res, next);
   }
 
   static authViewer(req, res, next) {
