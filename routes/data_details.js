@@ -5,7 +5,7 @@ const DataDetailsController = require('../controllers/data_details');
 
 router.get('/', DataDetailsController.getAll);
 router.get('/:id', DataDetailsController.getOne);
-router.post('/', DataDetailsController.create);
+router.post('/', AuthorizationMiddleware.authAdmin, AuthorizationMiddleware.authStudent, DataDetailsController.create);
 router.put('/:id', DataDetailsController.update);
 router.delete('/:id', DataDetailsController.delete);
 
