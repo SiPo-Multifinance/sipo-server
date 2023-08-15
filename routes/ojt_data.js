@@ -3,10 +3,10 @@ const router = express.Router();
 const AuthorizationMiddleware = require('../middlewares/auth');
 const OJTDataController = require('../controllers/ojt_data');
 
-router.get('/', OJTDataController.getAll);
-router.get('/:id', OJTDataController.getOne);
-router.post('/', OJTDataController.create);
-router.put('/:id', OJTDataController.update);
-router.delete('/:id', OJTDataController.delete);
+router.get('/', AuthorizationMiddleware.authViewer, OJTDataController.getAll);
+router.get('/:id', AuthorizationMiddleware.authViewer, OJTDataController.getOne);
+router.post('/', AuthorizationMiddleware.authAdmin, OJTDataController.create);
+router.put('/:id', AuthorizationMiddleware.authAdmin, OJTDataController.update);
+router.delete('/:id', AuthorizationMiddleware.authAdmin, OJTDataController.delete);
 
 module.exports = router;
