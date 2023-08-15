@@ -5,8 +5,8 @@ const NanoDetailsController = require('../controllers/nano_details');
 
 router.get('/', NanoDetailsController.getAll);
 router.get('/:id', NanoDetailsController.getOne);
-router.post('/', NanoDetailsController.create);
-router.put('/:id', NanoDetailsController.update);
-router.delete('/:id', NanoDetailsController.delete);
+router.post('/',  AuthorizationMiddleware.authStudent, AuthorizationMiddleware.authAdmin,NanoDetailsController.create);
+router.put('/:id', AuthorizationMiddleware.authAdmin,NanoDetailsController.update);
+router.delete('/:id', AuthorizationMiddleware.authAdmin, NanoDetailsController.delete);
 
 module.exports = router;
