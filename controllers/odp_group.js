@@ -28,7 +28,7 @@ class ODPGroupController {
       const odp_group = await ODPGroup.findByPk(req.params.id, {
         include: {
           model: User,
-          attributes: ['id', 'username'],
+          attributes: ['id', 'username', 'first_name', 'last_name', 'nik'],
           through: UserODPGroup,
         },
       });
@@ -36,6 +36,9 @@ class ODPGroupController {
       const users = odp_group.Users.map(user => ({
         id: user.id,
         username: user.username,
+        first_name: user.first_name,
+        last_name: user.last_name,
+        nik: user.nik
       }));
 
       const odpGroupJson = odp_group.toJSON();
