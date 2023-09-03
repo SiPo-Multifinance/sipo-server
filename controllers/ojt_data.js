@@ -10,6 +10,19 @@ class OJTDataController {
         }
     }
 
+    static async getAllByUser(req, res) {
+        try {
+            const ojt_data = await OJTData.findAll({
+                where: {
+                    user_id: req.params.user_id
+                }
+            });
+            res.status(200).json(ojt_data);
+        } catch (err) {
+            next(err);
+        }
+    }
+
     static async getOne(req, res) {
         try {
             const ojt_data = await OJTData.findByPk(req.params.id);
