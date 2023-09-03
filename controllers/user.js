@@ -27,7 +27,7 @@ class UserController {
             expiresIn: '1d',
           }
         );
-        res.status(200).json({ user_id: user.id, token });
+        res.status(200).json({ user_id: user.id, token, is_admin: user.is_admin, is_student: user.is_student});
       } catch (err) {
         if (err.name === 'InvalidCredential') {
           return res.status(401).json({ message: 'Invalid Credential' });
