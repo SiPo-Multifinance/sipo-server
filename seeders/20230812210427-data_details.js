@@ -22,14 +22,6 @@ module.exports = {
    },
    {
     ojt_data_id: 2,
-    title: 'MENTOR TEKNIS & NON TEKNIS',
-    description: 'lorem ipsum dolor sit amet',
-    date: new Date(),
-    createdAt: new Date(),
-    updatedAt: new Date()
-   },
-   {
-    ojt_data_id: 2,
     title: 'RECAP DAILY REPORT',
     description: 'lorem ipsum dolor sit amet',
     date: new Date(),
@@ -60,6 +52,14 @@ module.exports = {
     createdAt: new Date(),
     updatedAt: new Date()
    },
+   {
+    ojt_data_id: 2,
+    title: 'MENTOR TEKNIS & NON TEKNIS',
+    description: 'lorem ipsum dolor sit amet',
+    date: new Date(),
+    createdAt: new Date(),
+    updatedAt: new Date()
+   }
   ], {});
   },
 

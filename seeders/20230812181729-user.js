@@ -28,7 +28,7 @@ module.exports = {
     {
       is_admin: false,
       is_student: true,
-      username: 'student',
+      username: 'Sanydo',
       password: hashedStudentPassword,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -36,7 +36,7 @@ module.exports = {
     {
       is_admin: false,
       is_student: true,
-      username: 'student2',
+      username: 'Gunantyo',
       password: hashedStudentPassword,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -44,7 +44,7 @@ module.exports = {
     {
       is_admin: false,
       is_student: true,
-      username: 'student3',
+      username: 'Ilham',
       password: hashedStudentPassword,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -52,7 +52,7 @@ module.exports = {
     {
       is_admin: false,
       is_student: true,
-      username: 'student4',
+      username: 'Reno',
       password: hashedStudentPassword,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -60,7 +60,7 @@ module.exports = {
     {
       is_admin: false,
       is_student: true,
-      username: 'student5',
+      username: 'Yohana',
       password: hashedStudentPassword,
       createdAt: new Date(),
       updatedAt: new Date()
@@ -68,7 +68,7 @@ module.exports = {
     {
       is_admin: false,
       is_student: true,
-      username: 'student6',
+      username: 'Yanda',
       password: hashedStudentPassword,
       createdAt: new Date(),
       updatedAt: new Date()
