@@ -38,7 +38,7 @@ class UserController {
 
   static async register(req, res, next) {
     try {
-      const { username, password, is_admin, is_student } = req.body;
+      const { username, password, is_admin, is_student, nik, first_name, last_name } = req.body;
       const hashedPassword = await bcrypt.hash(password, 10);
 
       const user = await User.create({
@@ -46,6 +46,9 @@ class UserController {
         password: hashedPassword,
         is_admin,
         is_student,
+        nik,
+        first_name,
+        last_name
       });
 
       res.status(201).json(user);
