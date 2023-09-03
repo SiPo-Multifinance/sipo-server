@@ -19,7 +19,10 @@ module.exports = (sequelize, DataTypes) => {
     is_admin: DataTypes.BOOLEAN,
     is_student: DataTypes.BOOLEAN,
     username: DataTypes.STRING,
-    password: DataTypes.STRING
+    password: DataTypes.STRING,
+    first_name: DataTypes.STRING,
+    last_name: DataTypes.STRING,
+    nik: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'User',
