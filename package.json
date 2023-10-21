@@ -16,6 +16,7 @@
     "sqlite3": "^5.1.6"
   },
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "sql": "mysql -hcontainers-us-west-98.railway.app -uroot -p66ZpkfF1gVuC0sPq3GS5 --port 6681 --protocol=TCP railway"
   }
 }
