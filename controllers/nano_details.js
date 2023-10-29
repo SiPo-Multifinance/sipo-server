@@ -64,6 +64,21 @@ static async create(req, res, next) {
       next(err);
     }
   }
+
+  static async setStatus(req, res,next) {
+    try {
+      const {status, id} = req.body
+
+      if (status) {
+        await NanoDetail.update({status}, {where: {id}})
+
+        return res.status(200).json({message: 'Status updated'})
+      }
+
+    } catch (err) {
+      next(err)
+    }
+  }
 }
 
 module.exports = NanoDetailsController;
