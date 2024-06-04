@@ -17,7 +17,7 @@ const config = {
 const db = {};
 
 const sequelize = new Sequelize(
-  'mysql://root:66ZpkfF1gVuC0sPq3GS5@containers-us-west-98.railway.app:6681/railway', {}
+  'mysql://root:pVbHdNQPTgMceevFSfVSSkuliKSBzJbD@mysql-uf3_.railway.internal:3306/railway', {}
 );
 
 fs.readdirSync(__dirname)
