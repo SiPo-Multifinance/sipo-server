@@ -21,12 +21,12 @@ module.exports = {
       },
       {
         user_id: 3,
-        odp_group_id: 2,
+        odp_group_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()},
       {
         user_id: 4,
-        odp_group_id: 3,
+        odp_group_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -48,6 +48,13 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
+      ,
+      {
+        user_id: 8,
+        odp_group_id: 1,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      }
       ], {});
     },
 
