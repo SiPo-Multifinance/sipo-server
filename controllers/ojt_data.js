@@ -6,7 +6,7 @@ class OJTDataController {
             const ojt_data = await OJTData.findAll();
             res.status(200).json(ojt_data);
         } catch (err) {
-            next(err);
+            console.log(err)
         }
     }
 
@@ -25,7 +25,7 @@ class OJTDataController {
           });
           res.status(200).json(ojt_data);
       } catch (err) {
-          next(err);
+          console.log(err)
       }
   }
 
@@ -37,7 +37,7 @@ class OJTDataController {
             }
             res.status(200).json(ojt_data);
         } catch (err) {
-            next(err);
+            console.log(err)
         }
     }
 
@@ -47,7 +47,7 @@ class OJTDataController {
           const odpGroup = await OJTData.create({ title, user_id});
           res.status(201).json(odpGroup);
         } catch (err) {
-          next(err);
+          console.log(err)
         }
       }
     
@@ -65,7 +65,7 @@ class OJTDataController {
     
           res.status(200).json(odpGroup);
         } catch (err) {
-          next(err);
+          console.log(err)
         }
       }
     
@@ -80,7 +80,7 @@ class OJTDataController {
           await odpGroup.destroy();
           res.status(204).send();
         } catch (err) {
-          next(err);
+          console.log(err)
         }
       }
 }

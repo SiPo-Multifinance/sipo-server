@@ -19,7 +19,7 @@ class ODPGroupController {
 
       res.status(200).json(odp_groups);
     } catch (err) {
-      next(err);
+      console.log(err)
     }
   }
 
@@ -46,7 +46,7 @@ class ODPGroupController {
 
       res.status(200).json({ ...odpGroupJson, Users: users });
     } catch (err) {
-      next(err);
+      console.log(err)
     }
   }
 
@@ -56,7 +56,7 @@ class ODPGroupController {
       const odpGroup = await ODPGroup.create({ name, batch });
       res.status(201).json(odpGroup);
     } catch (err) {
-      next(err);
+      console.log(err)
     }
   }
 
@@ -85,7 +85,7 @@ class ODPGroupController {
       const createdUserODPGroups = await Promise.all(userODPGroupPromises);
       res.status(200).json(createdUserODPGroups);
     } catch (err) {
-      next(err);
+      console.log(err)
     }
   }  
 
@@ -103,7 +103,7 @@ class ODPGroupController {
 
       res.status(200).json(odpGroup);
     } catch (err) {
-      next(err);
+      console.log(err)
     }
   }
 
@@ -118,7 +118,7 @@ class ODPGroupController {
       await odpGroup.destroy();
       res.status(204).send();
     } catch (err) {
-      next(err);
+      console.log(err)
     }
   }
 }

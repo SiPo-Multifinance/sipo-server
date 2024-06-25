@@ -35,7 +35,7 @@ class UserController {
         if (err.name === 'InvalidCredential') {
           return res.status(401).json({ message: 'Invalid Credential' });
         }
-        next(err);
+        console.log(err)
     }
   }
 
@@ -56,7 +56,7 @@ class UserController {
 
       res.status(201).json(user);
     } catch (err) {
-      next(err);
+      console.log(err)
     }
   }
 
@@ -66,7 +66,7 @@ class UserController {
       res.status(200).json(users);
     } catch (err) {
       console.log('ERROOOOOOOOOOOOR', err)
-      next(err);
+      console.log(err)
     }
   }
 
@@ -78,7 +78,7 @@ class UserController {
       }
       res.status(200).json(user);
     } catch (err) {
-      next(err);
+      console.log(err)
     }
   }
 
@@ -96,7 +96,7 @@ class UserController {
 
       res.status(201).json(user);
     } catch (err) {
-      next(err);
+      console.log(err)
     }
   }
 
@@ -128,7 +128,7 @@ class UserController {
 
       res.status(200).json(user);
     } catch (err) {
-      next(err);
+      console.log(err)
     }
   }
 
@@ -141,7 +141,7 @@ class UserController {
       await user.destroy();
       res.status(204).send();
     } catch (err) {
-      next(err);
+      console.log(err)
     }
   }
 }

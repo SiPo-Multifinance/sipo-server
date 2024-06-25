@@ -6,7 +6,7 @@ class DataDetailsController {
         const data_details = await DataDetail.findAll();
         res.status(200).json(data_details);
         } catch (err) {
-        next(err);
+        console.log(err)
         }
     }
 
@@ -18,7 +18,7 @@ class DataDetailsController {
             }
             res.status(200).json(data_detail);
         } catch (err) {
-            next(err);
+            console.log(err)
         }
     }
 
@@ -28,7 +28,7 @@ class DataDetailsController {
           const odpGroup = await DataDetail.create({ title, date, description, ojt_data_id});
           res.status(201).json(odpGroup);
         } catch (err) {
-          next(err);
+          console.log(err)
         }
       }
     
@@ -46,7 +46,7 @@ class DataDetailsController {
     
           res.status(200).json(odpGroup);
         } catch (err) {
-          next(err);
+          console.log(err)
         }
       }
     
@@ -61,7 +61,7 @@ class DataDetailsController {
           await odpGroup.destroy();
           res.status(204).send();
         } catch (err) {
-          next(err);
+          console.log(err)
         }
       }
 };
