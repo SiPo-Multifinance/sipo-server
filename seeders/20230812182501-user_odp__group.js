@@ -48,7 +48,6 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
-      ,
       {
         user_id: 8,
         odp_group_id: 1,
