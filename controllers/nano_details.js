@@ -6,7 +6,7 @@ class NanoDetailsController {
           const nano_details = await NanoDetail.findAll();
           res.status(200).json(nano_details);
       } catch (err) {
-          next(err);
+          console.log(err);
       }
   }
 
@@ -18,7 +18,7 @@ static async getOne(req, res) {
         }
         res.status(200).json(nano_detail);
     } catch (err) {
-        next(err);
+        console.log(err);
     }
 }
 
@@ -28,7 +28,7 @@ static async create(req, res, next) {
       const odpGroup = await NanoDetail.create({ title, date, description, data_details_id});
       res.status(201).json(odpGroup);
     } catch (err) {
-      next(err);
+      console.log(err);
     }
   }
 
@@ -46,7 +46,7 @@ static async create(req, res, next) {
 
       res.status(200).json(odpGroup);
     } catch (err) {
-      next(err);
+      console.log(err);
     }
   }
 
@@ -61,7 +61,7 @@ static async create(req, res, next) {
       await odpGroup.destroy();
       res.status(204).send();
     } catch (err) {
-      next(err);
+      console.log(err);
     }
   }
 

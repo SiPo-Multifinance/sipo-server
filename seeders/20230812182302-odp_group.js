@@ -19,13 +19,7 @@ module.exports = {
     batch: 1,
     createdAt: new Date(),
     updatedAt: new Date()
-   },
-   {name: 'ODP Group 2',
-    batch: 2,createdAt: new Date(),
-    updatedAt: new Date()},
-   {name: 'ODP Group 3',
-    batch: 3,createdAt: new Date(),
-    updatedAt: new Date()}
+   }
   ], {});
   },
 
