@@ -18,8 +18,7 @@ module.exports = (sequelize, DataTypes) => {
     title: DataTypes.STRING,
     date: DataTypes.DATE,
     description: DataTypes.STRING,
-    data_details_id: DataTypes.INTEGER,
-    status: DataTypes.STRING
+    data_details_id: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'NanoDetail',
